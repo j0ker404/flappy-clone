@@ -9,6 +9,6 @@ whoops this is going to be a flappy clone
 
 
 ## pipes
-    - [ ] define pipe
+    - [x] define pipe
     - [ ] define pipe group
     - [ ] randomise pipe group dimensions
