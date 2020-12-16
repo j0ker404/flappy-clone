@@ -3,7 +3,7 @@
 
 ## bird:
  - [x] make bird class
- - [ ]  
+
 
 
 ## pipes
