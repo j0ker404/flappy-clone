@@ -6,7 +6,7 @@ class Pipe(Sprite):
         Class that defines a pipe(either top or bottom)
     '''
     __pipe_colour = 111, 232, 95
-    __pipe_width = 10
+    __pipe_width = 60
 
 
     def __init__(self,height, type=True):
