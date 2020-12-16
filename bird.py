@@ -13,15 +13,29 @@ class Bird(Sprite):
         self.image  = Bird.__asurf
         # update rect of sprite
         self.rect   = self.image.get_rect()
+        self.__width = self.image.get_width()
+        self.__height = self.image.get_height()
 
     # update position of sprite
     # accepted key-value: x, y
-    def update(self, *args, **kwargs) -> None:
-        x,y = -1,-1
-        try:
-            x,y = args
-            self.rect.x = x
-            self.rect.y = y
-        except:
-            print('error with bitd update')
+    def update(self, x,y):
+        # x,y = -1,-1
+        self.rect.x = x
+        self.rect.y = y
+        # try:
+        #     x,y = args
+        # except:
+        #     print('error with bird update')
 
+
+    def get_width(self):
+        """
+        return width of sprite
+        """
+        return self.__width
+    
+    def get_height(self):
+        """
+        return height of sprite
+        """
+        return self.__height
