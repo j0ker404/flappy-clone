@@ -1,7 +1,7 @@
 import pygame
 import sys
 from bird import Bird
-
+import constant as CONSTANT
 
 WHITE = (255,255,255)
 BLACK = (0,0,0)
@@ -13,14 +13,13 @@ def quit():
 if __name__ == '__main__':
 
     pygame.init()
-    res = (500,500)
-    SCREEN = pygame.display.set_mode(res)
-    pygame.display.set_caption('Flappy Clone')
+    SCREEN = pygame.display.set_mode(CONSTANT.game_res)
+    pygame.display.set_caption(CONSTANT.game_title)
 
     # sprites
     bird = Bird()
     x = bird.get_width()
-    y = int(res[1]/2) - bird.get_height()/2
+    y = int(CONSTANT.game_res[1]/2) - bird.get_height()/2
     # print('x = {}'.format(x))
     bird.update(x, y)
 
