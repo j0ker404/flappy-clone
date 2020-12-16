@@ -16,9 +16,12 @@ class Bird(Sprite):
         self.__width = self.image.get_width()
         self.__height = self.image.get_height()
 
-    # update position of sprite
-    # accepted key-value: x, y
+
     def update(self, x,y):
+        """
+        update position of sprite
+        accepted key-value: x, y
+        """
         # x,y = -1,-1
         self.rect.x = x
         self.rect.y = y
