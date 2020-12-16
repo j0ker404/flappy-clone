@@ -3,6 +3,8 @@ import sys
 from bird import Bird
 import constant as CONSTANT
 from game_area import Game_Area
+from pipe import Pipe
+
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
@@ -25,6 +27,11 @@ if __name__ == '__main__':
 
     # define game area
     game_area = Game_Area()
+
+    # pipe test
+    pipe = Pipe(250)
+    pipe.set_x(game_area.get_width()-Pipe.get_width()*2)
+
     # game loop:
     # - events
     # - update state
@@ -46,6 +53,7 @@ if __name__ == '__main__':
         # add background colour
         game_area.fill(WHITE)
         game_area.blit(bird.image,bird.rect)
+        game_area.blit(pipe.image,(pipe.get_x(), pipe.get_y()))
         SCREEN.blit(game_area,game_area.get_coords())
         pygame.display.update()
 
