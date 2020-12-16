@@ -1,7 +1,5 @@
-# dino-clone
-Chrome dino clone
+# flappy-clone
 
-whoops this is going to be a flappy clone
 
 ## bird:
  - [x] make bird class
