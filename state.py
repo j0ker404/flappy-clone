@@ -33,7 +33,16 @@ class State:
         """
         update current state on game area
         """
-        pass
+        # events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
+                    quit()
+                elif event.key == pygame.K_SPACE:
+                    # jump
+                    pass
 
     def update_display(self):
         """ 
