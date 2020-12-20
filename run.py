@@ -4,9 +4,8 @@ from bird import Bird
 import constant as CONSTANT
 from game_area import Game_Area
 from pipe import Pipe
-
-WHITE = (255,255,255)
-BLACK = (0,0,0)
+import colours
+from state import State
 
 def quit():
     pygame.quit()
@@ -35,11 +34,13 @@ if __name__ == '__main__':
     # set pipe on bottom of area
     pipe.set_y(game_area.get_height() - pipe.get_height())
 
+    # create State instance
+    state = State(game_area=game_area,bird=bird,SCREEN=SCREEN,pipe=pipe)
     # game loop:
     # - events
     # - update game state
     # - draw current game state
-    SCREEN.fill(BLACK)
+    SCREEN.fill(colours.BLACK)
     while True:
         # events
         for event in pygame.event.get():
@@ -51,15 +52,12 @@ if __name__ == '__main__':
                 elif event.key == pygame.K_SPACE:
                     # jump
                     pass
+        
+        # update game state
+        state.update_state()
+        # draw current game state
+        state.draw()
+        # update window
+        state.update_display()
 
-
-        # draw current state on game screen
-        # add background colour
-        game_area.fill(WHITE)
-        game_area.blit(bird.image,bird.rect)
-        game_area.blit(pipe.image,(pipe.get_x(), pipe.get_y()))
-
-        # draw game screen on APP window
-        SCREEN.blit(game_area,game_area.get_coords())
-        pygame.display.update()
 
