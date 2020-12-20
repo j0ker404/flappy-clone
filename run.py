@@ -37,21 +37,11 @@ if __name__ == '__main__':
     # create State instance
     state = State(game_area=game_area,bird=bird,SCREEN=SCREEN,pipe=pipe)
     # game loop:
-    # - events
     # - update game state
+    #      - events
     # - draw current game state
     SCREEN.fill(colours.BLACK)
     while True:
-        # events
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                quit()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_q:
-                    quit()
-                elif event.key == pygame.K_SPACE:
-                    # jump
-                    pass
         
         # update game state
         state.update_state()
