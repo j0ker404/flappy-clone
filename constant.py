@@ -25,6 +25,6 @@ canvas = [
 gap_height = int(canvas[0][1]*0.2)
 
 # min height of pipe (10 pixels for 450 game height)
-min_pipe_height = int(canvas[0][1]*0.222222)
+min_pipe_height = int(canvas[0][1]*0.0222222)
 # max height of pipe (half_game_area_height - half_gap_height)
 max_pipe_height = int(canvas[0][1]-gap_height/2)
