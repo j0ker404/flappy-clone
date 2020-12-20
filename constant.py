@@ -18,3 +18,8 @@ canvas = [
         [game_res[0]*1, game_res[0]*1],
         [game_res[0]*.0, game_res[0]*.0]
 ]
+
+
+
+# gap between pipe pair
+gap_height = int(canvas[0][1]*0.2)
