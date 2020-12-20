@@ -23,6 +23,15 @@ class Pipe(Sprite):
         self.rect = self.image.get_rect()
 
         self.__type = type
+
+    
+    def update(self,x, y, height):
+        """
+        update x,y, height of pipe
+        """
+        self.set_x(x)
+        self.set_y(y)
+        self.set_height(height)
     
 
     def get_type(self):
