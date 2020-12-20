@@ -19,7 +19,7 @@ class Pipe(Sprite):
 
         self.image = pygame.Surface([Pipe.__pipe_width, height])
         self.image.fill(Pipe.__pipe_colour)
-
+        self.height = height
         self.rect = self.image.get_rect()
 
         self.__type = type
@@ -47,6 +47,12 @@ class Pipe(Sprite):
         """
         self.rect.x = x
 
+    def set_y(self, y):
+        """
+            set the pipe y(top) value
+        """
+        self.rect.y = y
+
 
     def get_y(self):
         """
@@ -54,7 +60,18 @@ class Pipe(Sprite):
         """
         return self.rect.y
 
+    def get_height(self):
+        """
+        return height of pipe
+        """
+        return self.height    
     
+    def set_height(self, height):
+        """
+        return height of pipe
+        """
+        self.height = height    
+
     @staticmethod
     def get_colour():
         """
@@ -66,7 +83,7 @@ class Pipe(Sprite):
     @staticmethod
     def get_width():
         """
-        return width of pip
+        return width of pipe
         """
         return Pipe.__pipe_width
  
