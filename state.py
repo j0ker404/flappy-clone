@@ -18,7 +18,7 @@ class State:
     
     def draw(self):
         """
-        draw state
+        draw state on screen
         """
         # draw current state on game screen
         # add background colour
@@ -35,7 +35,7 @@ class State:
         """
         pass
 
-    def update(self):
+    def update_display(self):
         """ 
             Update display
         """
