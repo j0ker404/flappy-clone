@@ -30,12 +30,15 @@ if __name__ == '__main__':
 
     # pipe test
     pipe = Pipe(250)
+    # set pipe x position
     pipe.set_x(game_area.get_width()-Pipe.get_width()*2)
+    # set pipe on bottom of area
+    pipe.set_y(game_area.get_height() - pipe.get_height())
 
     # game loop:
     # - events
-    # - update state
-    # - draw
+    # - update game state
+    # - draw current game state
     SCREEN.fill(BLACK)
     while True:
         # events
@@ -50,10 +53,13 @@ if __name__ == '__main__':
                     pass
 
 
+        # draw current state on game screen
         # add background colour
         game_area.fill(WHITE)
         game_area.blit(bird.image,bird.rect)
         game_area.blit(pipe.image,(pipe.get_x(), pipe.get_y()))
+
+        # draw game screen on APP window
         SCREEN.blit(game_area,game_area.get_coords())
         pygame.display.update()
 
