@@ -36,18 +36,23 @@ if __name__ == '__main__':
 
     # create State instance
     state = State(game_area=game_area,bird=bird,SCREEN=SCREEN,pipe=pipe)
+
+    # create timer
+    clock = pygame.time.Clock()
     # game loop:
     # - update game state
     #      - events
     # - draw current game state
     SCREEN.fill(colours.BLACK)
     while True:
-        
         # update game state
         state.update_state()
         # draw current game state
         state.draw()
         # update window
         state.update_display()
+
+        # fix game to 60fps
+        time = clock.tick(CONSTANT.FPS)
 
 
